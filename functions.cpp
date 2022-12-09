@@ -26,6 +26,7 @@ bool isPalindrome(string ustring) {
   //create a new string without the front/rear indecies and call the function again with the substring
   else if (ustring.at(0) == ustring.at(length_of_string - 1)) 
   {
+    if (ustring.length() <= 4) return true;
     string new_string = ustring.substr(1, (length_of_string - 2));
     isPalindrome(new_string);
   }
@@ -51,7 +52,7 @@ void printMap(map<string, string> map) {
 void giveStateReturnCapital(map<string, string> map) {
   string stateName;
   cout << "Enter a state you would like to find the capital of -> ";
-  cin >> stateName;
+  getline(cin, stateName);
 
   //auto iterator that will find the map data pair
   auto it = map.find(stateName);
